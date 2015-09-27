@@ -1,5 +1,5 @@
 //
-// # SimpleServer loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooool
+// # SimpleServer
 //
 // A simple chat server using Socket.IO, Express, and Async.
 //
@@ -25,12 +25,13 @@ var messages = [];
 var sockets = [];
 
 io.on('connection', function (socket) {
+    socket.emit('newUser','');
     messages.forEach(function (data) {
       socket.emit('message', data);
     });
 
     sockets.push(socket);
-    socket.emit('newUser','');
+    
     socket.on('disconnect', function () {
       sockets.splice(sockets.indexOf(socket), 1);
       updateRoster();
