@@ -3,8 +3,8 @@
   <head>
     <title>Chat Example</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
     <style>
       body {
         padding-top: 60px;
@@ -28,7 +28,7 @@
           $scope.$apply();
         });
         socket.on('newUser',function(){
-          
+
         });
 
         socket.on('roster', function (names) {
@@ -75,7 +75,7 @@
                 <th class="span2">Name</th>
                 <th class="span7">Text</th>
                 <th class="span7">Hour</th>
-                
+
               </tr>
             </thead>
             <tbody>
@@ -83,7 +83,7 @@
                 <td class="span2" ng-bind="msg.name"></td>
                 <td class="span7" ng-bind="msg.text"></td>
                 <td class="span7" ng-bind="msg.hour"></td>
-                
+
               </tr>
             </tbody>
           </table>
